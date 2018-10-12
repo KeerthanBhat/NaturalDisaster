@@ -8,6 +8,5 @@ Prediction - Flash floods are generally caused due to heavy rainfall and poor ma
 Rainfall-Runoff modelling is a mathematical model describing relations of a rainfall catchment area, drainage basin or watershed with rainfall parameters. It basically produces a surface runoff hydrograph in response to a rainfall event which will be used in flood forecast.
 We intend to research about Recurrent Neural Networks, of Elman and Jordan forms specifically and compare it with the basic Feed Forward Networks and Multilayer Perceptrons since it has been found to give better results according to latest research from Institute for Water Education. If everything goes well, we will be implementing using the RNN algorithm.
 
-Prevention - After analyzing the rainfall forecast and dam water levels at a particular time, we intend to build algorithms to coordinate the opening and closing of dams gates at various places in the country. The reservoirs and dams has to be intelligently co-ordinated to achieve optimal management of water from the rivers and rain.
 
 Management - A chrome extension to block fake news regarding death tolls and places affected. We want to create a one stop solution to get a centralized common accurate news.
