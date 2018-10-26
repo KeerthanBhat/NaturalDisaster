@@ -1,0 +1,81 @@
+{% extends "floods/base.html" %}
+{% load staticfiles %}
+
+{% block title %}
+    Predict
+{% endblock %}
+
+{% block main %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+</style>
+
+<div style="text-align: center;">
+<br /><br /><br /><br />
+<button style="padding: 10px;font-style: verdana;font-size: 20px;background-color: #FA8A0B;" id="myBtn">Check results</button>
+</div>
+
+<div id="myModal" class="modal">
+
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p style="font-family: sans-serif;font-size:25px;color: red;">
+       <br />Predicted rainfall amount: {{ rainfall }} mm<br />
+       <br />Predicted flood occurence: {{ floods }}%<br />
+   	   <br />{{ text }}<br /><br /></p>
+  </div>
+
+</div>
+
+<script>
+var modal = document.getElementById('myModal');
+var btn = document.getElementById("myBtn");
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+span.onclick = function() {
+    modal.style.display = "none";
+}
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+{% endblock %}

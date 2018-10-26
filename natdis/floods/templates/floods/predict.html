@@ -1,0 +1,65 @@
+{% extends "floods/base.html" %}
+{% load staticfiles %}
+
+{% block title %}
+    Predict
+{% endblock %}
+
+{% block main %}
+<style type="text/css">
+	.column {
+	float: left;
+    width: 50%;
+	}
+</style>
+
+<form id="predict_form" method="post" action="/floods/predict/">
+	{% csrf_token %}
+	<div class="column">
+	<br />
+	<br />
+	Minimum Temperature:<br /><input type="number" step="0.01" name="minitemp" value="" size="30" required/> degree Celsius
+	<br />
+	<br />
+	Maximum Temperature:<br /><input type="number" step="0.01" name="maxitemp" value="" size="30" required/> degree Celsius
+	<br />
+	<br />
+	Wind Gust Speed:<br /><input type="number" step="0.01" name="windgust" value="" size="30" required/> Km/Hr
+	<br />
+	<br />
+	Wind Speed @9AM:<br /><input type="number" step="0.01" name="wind9" value="" size="30" required/> Km/Hr
+	<br />
+	<br />
+	Wind Speed @3PM:<br /><input type="number" step="0.01" name="wind3" value="" size="30" required/> Km/Hr
+	<br />
+	<br />
+	</div>
+	<div class="column">
+	<br />
+	Humidity @9AM:<br /><input type="number" step="0.01" name="humid9" value="" size="30" required/> %
+	<br />
+	<br />
+	Humidity @3PM:<br /><input type="number" step="0.01" name="humid3" value="" size="30" required/> %
+	<br />
+	<br />
+	Pressure @9AM:<br /><input type="number" step="0.01" name="pressure9" value="" size="30" required/> milli Bar
+	<br />
+	<br />
+	Pressure @3PM:<br /><input type="number" step="0.01" name="pressure3" value="" size="30" required/> milli Bar
+	<br />
+	<br />
+	Temperature @9AM:<br /><input type="number" step="0.01" name="temp9" value="" size="30" required/> degree Celsius
+	<br />
+	<br />
+	Temperature @3PM:<br /><input type="number" step="0.01" name="temp3" value="" size="30" required/> degree Celsius
+	<br />
+	<br />
+	<br />
+	<br />
+	</div>
+	<div style="text-align: center;">
+	<input style="padding: 10px;font-style: verdana;font-size: 20px;background-color: #FA8A0B;" type="submit" value="PREDICT" />
+	</div>
+</form>
+
+{% endblock %}
